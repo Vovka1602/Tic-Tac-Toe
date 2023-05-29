@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel = "stylesheet" href = "css/style.css">
+</head>
+<body>
+    
+    <canvas id="main"></canvas>
+
+    <script src="js/SceneManager.js"></script>
+    <script src="js/EventEmitter.js"></script>
+    <script src="js/ResourceManager.js"></script>
+    <script src="js/Dependency.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/scenes/MainMenu.js"></script>
+    <script src="js/scenes/Game.js"></script>
+    <script src="js/SceneBuilder.js"></script>
+    <script src="js/InputManager.js"></script>
+
+    <div class="stats">
+        <table>
+            <th colspan="2">Статистика гри</th>
+            <tr>
+                <td>X</td>
+                <td><span id="sx">0</span></td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td><span id="so">0</span></td>
+            </tr>
+            <tr>
+                <td>Нічиї</td>
+                <td><span id="st">0</span></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+
+        async function bootstrap()
+        {
+            const d = Dependency.create();
+            d.set('canvas', document.getElementById('main'));
+            const manager = d.get(SceneManager);
+            const menu_scene = d.get(Game);
+            manager.load_scene(menu_scene);
+            console.info('test', manager);
+            manager.start();
+        }
+
+        bootstrap();
+    </script>
+</body>
+</html>

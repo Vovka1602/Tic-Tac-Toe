@@ -1,0 +1,24 @@
+* {margin: 3px; padding: 3px;} 
+
+#main
+{
+    width: 70vw;
+    height: 70vh;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.stats table {
+    border-collapse: collapse;
+}
+
+.stats table, .stats th, .stats td {
+    border: 2px solid #000;
+    padding: 5px;
+    text-align: center;
+}
